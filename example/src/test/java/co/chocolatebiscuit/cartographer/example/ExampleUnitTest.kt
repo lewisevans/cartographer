@@ -1,4 +1,4 @@
-package co.chocolatebiscuit.cartographer
+package co.chocolatebiscuit.cartographer.example
 
 import org.junit.Test
 

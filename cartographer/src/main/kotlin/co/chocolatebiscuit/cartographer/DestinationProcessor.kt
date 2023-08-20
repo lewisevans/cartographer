@@ -94,6 +94,7 @@ internal class DestinationProcessor(
                 "import androidx.compose.foundation.layout.fillMaxSize\n" +
                         "import androidx.compose.runtime.Composable\n" +
                         "import androidx.compose.ui.Modifier\n" +
+                        "import androidx.navigation.NavHostController\n" +
                         "import androidx.navigation.compose.NavHost\n" +
                         "import androidx.navigation.compose.rememberNavController"
             )
@@ -103,8 +104,8 @@ internal class DestinationProcessor(
             append("fun $ROOT_NAV_HOST_NAME(\n")
             tabAppend("modifier: Modifier = Modifier,\n")
             tabAppend("startDestination: String = \"\",\n")
+            tabAppend("navController: NavHostController = rememberNavController()\n")
             append(") {\n")
-            tabAppend("val navController = rememberNavController()\n")
             tabAppend("NavHost(\n")
             tabAppend("navController = navController,\n", 2)
             tabAppend("modifier = modifier,\n", 2)

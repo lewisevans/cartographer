@@ -1,4 +1,4 @@
-package co.chocolatebiscuit.cartographer
+package co.chocolatebiscuit.cartographer.example
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("co.chocolatebiscuit.cartographer", appContext.packageName)
+        assertEquals("co.chocolatebiscuit.cartographer.example", appContext.packageName)
     }
 }
