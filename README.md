@@ -54,6 +54,7 @@ in your `Activity`s `onCreate()` method.
 override fun onCreate(savedInstanceState: Bundle?) { 
     super.onCreate(savedInstanceState)
     setContent {
+        val navController = rememberNavController()
         CartographerTheme {
             AppNavHost(
                 modifier = Modifier.padding(it),
