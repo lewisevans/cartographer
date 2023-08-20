@@ -31,7 +31,8 @@ fun MainBottomNavigation(
             label = {
                 Text(
                     text = "Red",
-                    fontSize = 12.sp
+                    fontSize = 12.sp,
+                    color = Color.White,
                 )
             },
             selectedContentColor = MaterialTheme.colors.onPrimary,
@@ -53,7 +54,8 @@ fun MainBottomNavigation(
             label = {
                 Text(
                     text = "Green",
-                    fontSize = 12.sp
+                    fontSize = 12.sp,
+                    color = Color.White,
                 )
             },
             selectedContentColor = MaterialTheme.colors.onPrimary,
@@ -75,7 +77,8 @@ fun MainBottomNavigation(
             label = {
                 Text(
                     text = "Blue",
-                    fontSize = 12.sp
+                    fontSize = 12.sp,
+                    color = Color.White,
                 )
             },
             selectedContentColor = MaterialTheme.colors.onPrimary,
