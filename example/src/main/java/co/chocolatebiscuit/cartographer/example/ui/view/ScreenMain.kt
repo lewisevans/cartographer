@@ -1,6 +1,5 @@
 package co.chocolatebiscuit.cartographer.example.ui.view
 
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
@@ -29,7 +28,9 @@ fun ScreenMain() {
             MainBottomNavigation { appNavIem ->
                 when(appNavIem){
                     AppClickEvent.Blue -> navController.navigateToScreenBlue()
-                    AppClickEvent.Green -> navController.navigateToScreenGreen()
+                    AppClickEvent.Green -> navController.navigateToScreenGreen("Green. This " +
+                            "field is set using Cartographers generated" +
+                            " NavController.navigateToScreenGreen('Hello World') method")
                     AppClickEvent.Red -> navController.navigateToScreenRed()
                     else -> {}
                 }
