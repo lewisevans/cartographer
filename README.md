@@ -11,17 +11,16 @@ Annotate your `@Composable` with `@Destination`
 ```kotlin
 @Destination
 @Composable
-fun ScreenBlue() {
+fun ScreenRed() {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.Blue)
+            .background(Color.Red)
     )
 }
 ```
 Cartographer will generate an extension on `NavGraphBuilder` that it will add to an auto generated
-`NavHost` currently called `AppNavHost`. We will be adding the ability to create multiple `NavHost`s
-in the near future
+`NavHost` currently called `AppNavHost`.
 
 Cartographer will generate the typesafe code for you to navigate to the screen via another extension
 on the `NavController` that the AppNavHost is passed
@@ -49,5 +48,27 @@ which you can navigate to like so...
 ```kotlin
 navController.navigateToScreenBlue("Title")
 ```
-
-We will be creating a Maven artefact in due course.
+To use the AppNavHost in a project just add it to your `@Composable` graph where you want it such as
+in your `Activity`s `onCreate()` method.
+```kotlin
+override fun onCreate(savedInstanceState: Bundle?) { 
+    super.onCreate(savedInstanceState)
+    setContent {
+        CartographerTheme {
+            AppNavHost(
+                modifier = Modifier.padding(it),
+                startDestination = "ScreenRed",
+                navController = navController
+            )
+        }
+    }
+}
+```
+### Things coming to Cartographer
+- We will be adding a `startDestination` field to the `@Destination` so that you can specify it
+should start there.
+- We will be creating a Maven artefact in due course.
+- We will be adding the ability to create multiple `NavHost`s in the near future via a field in the
+`@Destination`.
+- Currently only Int Bool String and Long ar supported. Support for the remaining argument types 
+will follow shortly.
